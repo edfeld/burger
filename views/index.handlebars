@@ -1,72 +1,67 @@
 <!-- Index.handlebars -->
 
 <main role="main" class="container">
-  <div class="starter-template text-center text-warning bg-danger">
-        <h1>Eat-That-Burger</h1>
-        <p class="lead">Create burgers and eat them<br>guilt free because you gain no calories</p>
-      </div>
-</main>
-<div class="container-fluid" id="grad1">
-  <div class="">
-    <img class="photo mx-auto d-block" src="assets/img/burgerTwo.png" alt="A picture of a hamburger ">
-    {{!-- <h1>Eat That Burger</h1> --}}
+  <div class="starter-template text-center text-warning bg-danger mt-2 rounded-top">
+    <h1 id="h1-header">Eat-That-Burger</h1>
+    <p class="lead">Create burgers and eat them<br>guilt free because you gain no calories.</p>
+    <img id="fries-left" height="33px" class="position-relative" src="assets/img/icons8-french-fries-50.png" alt="a picture of french fries">
+    <img id="fries-right" height="33px" class="position-relative" src="assets/img/icons8-french-fries-50.png" alt="a picture of french fries">
   </div>
-</div>
+  <div class="container-fluid rounded-bottom" id="grad1">
+    <div class="">
+      <img class="photo mx-auto d-block" src="assets/img/burgerTwo.png" alt="A picture of a hamburger">
+      {{!-- <h1>Eat That Burger</h1> --}}
+    </div>
+  </div>
 
-<div class="container mt-2">
-  <div class="row">
-    <div class="col mr-2 bg-light border border-solid border-warning border-med rounded">
-      <h2>Burgers not devoured!</h2>
+  <div class="container mt-2">
+    <div class="row">
+      <div id="devour-col-left" class="col bg-light border border-solid border-warning border-med rounded">
+        <h2>Burgers not devoured!</h2>
 
-      <ul>
-        {{#each burgers}}
+        <ul>
+          {{#each burgers}}
           {{#unless devoured}}
-            {{> burgers/burger-block devour=true}}
+          {{> burgers/burger-block devour=true}}
           {{/unless}}
-        {{/each}}
-      </ul>
-      
-    </div>
-    <div class="col ml-2 bg-light border border-solid border-warning border-med rounded">
-      <h2>Burgers that are devoured!</h2>
+          {{/each}}
+        </ul>
 
-      <ul>
-        {{#each burgers}}
+      </div>
+      <div id="devour-col-right" class="col bg-light border border-solid border-warning border-med rounded">
+        <h2>Burgers that are devoured!</h2>
+
+        <ul>
+          {{#each burgers}}
           {{#if devoured}}
-            {{> burgers/devoured-burger-block }}
+          {{> burgers/devoured-burger-block }}
           {{/if}}
-        {{/each}}
-      </ul>
+          {{/each}}
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container mb-4">
-  
-  <div class="row">
-    <div class="col">
-    </div>
-    <div class="col-5 text-danger mt-4 bg-warning rounded">
-      <h2>Add a burger</h2>
-      <form class="create-form">
+  <div class="container mb-4">
 
-        <div class="form-group">
-          <label for="burg">Burger Name:</label>
-          <input type="text" id="burg" name="name">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-12 col-md-5 text-danger mt-3 bg-warning rounded">
+        <h2>Add a burger</h2>
+        <form class="create-form">
 
-        {{!-- <div class="form-group">
-          <label for="sleepy">Sleepy?</label><br>
-          <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-          <input type="radio" name="sleepy" value="0"> Awake
-        </div> --}}
+          <div class="form-group">
+            <label for="burg">Burger Name:</label>
+            <input type="text" id="burg" name="name">
+          </div>
+          <button class="w-50 mb-4" type="submit">Submit</button>
+        </form>
+      </div>
 
-        </div>
-        <button class="w-50 mb-4" type="submit">Submit Burger</button>
-      </form>
-    </div>
-    
-    <div class="col">
+      <div class="col">
+      </div>
     </div>
   </div>
-</div>
-
+</main>
+<footer id="burger-footer" class="text-right"><a href="https://icons8.com">Icon pack by Icons8</a></footer>
