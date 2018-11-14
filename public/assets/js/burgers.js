@@ -1,4 +1,5 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+// Capture the "devour it!" button click to perform an update
 $(function() {
     $(".change-devoured").on("click", function(event) {
       var id = $(this).data("id");
@@ -9,7 +10,7 @@ $(function() {
         devoured: isDevoured
       };
   
-      // Send the PUT request.
+      // Send the PUT request.  It's an update call
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: newState
@@ -22,10 +23,12 @@ $(function() {
       );
     });
   
+    // create a new burger
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
+      // Devoured is set to 0 as the default.  
       var newBurger = {
         burger_name: $("#burg").val().trim(),
         devoured: 0

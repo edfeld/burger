@@ -40,6 +40,7 @@ function printQuestionMarks(num) {
   }
   
   // Object for all our SQL statement functions.
+  // Select all burgers
   var orm = {
     selectAll: function(tableInput, cb) {
       var queryString = "SELECT * FROM " + tableInput + ";";
@@ -50,6 +51,7 @@ function printQuestionMarks(num) {
         cb(result);
       });
     },
+    // Insert one burger
     insertOne: function(table, cols, vals, cb) {
       var queryString = "INSERT INTO " + table;
   
@@ -70,7 +72,8 @@ function printQuestionMarks(num) {
         cb(result);
       });
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
+    //Update a burger
+    // An example of objColVals would be {burger_name: my burger, devoured: false}
     updateOne: function(table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
   

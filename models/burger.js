@@ -7,12 +7,14 @@ var burgers = {
       cb(res);
     });
   },
+  // call the insertOne function in the ORM
   // The variables cols and vals are arrays.
   insertOne: function(cols, vals, cb) {
     orm.insertOne("burgers", cols, vals, function(res) {
       cb(res);
     });
   },
+  // call the updateOne function in the ORM
   updateOne: function(objColVals, condition, cb) {
     orm.updateOne("burgers", objColVals, condition, function(res) {
       cb(res);

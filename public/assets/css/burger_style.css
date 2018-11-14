@@ -23,6 +23,10 @@
     color: #feed58
 }
 
+ul {
+    list-style-type:none;
+}
+
 #burger-footer {
     font-size: small;
     color: yellowgreen;
