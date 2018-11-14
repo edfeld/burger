@@ -11,7 +11,9 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
+console.log("__dirname +: ", __dirname + '/node_modules/bootstrap/dist');
 app.use(express.static("public"));
+app.use(express.static(__dirname + '/node_modules'));
 
 // Parse application body
 app.use(express.urlencoded({ extended: true }));

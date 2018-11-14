@@ -1,0 +1,12 @@
+#grad1 {
+    height: 100%;
+    background-color: rgb(255, 165, 0); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, orange , yellow); /* Standard syntax (must be last) */
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+

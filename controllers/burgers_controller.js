@@ -16,6 +16,7 @@ router.get("/", function(req, res) {
     });
   });
   
+  // Post is insert a new burger
   router.post("/api/burgers", function(req, res) {
     console.log("req.body: ", req.body);
     burgers.insertOne([
@@ -28,6 +29,7 @@ router.get("/", function(req, res) {
     });
   });
   
+  // Put is an update 
   router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
