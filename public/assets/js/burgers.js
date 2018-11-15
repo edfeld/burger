@@ -23,7 +23,7 @@ $(function() {
       );
     });
   
-    // create a new burger
+    // "create a new burger" listener. 
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
@@ -34,7 +34,7 @@ $(function() {
         devoured: 0
       };
   
-      // Send the POST request.
+      // Send the POST request. Create a new burger.
       $.ajax("/api/burgers", {
         type: "POST",
         data: newBurger
@@ -46,8 +46,6 @@ $(function() {
         }
       );
     });
-  
-   
   
   });
   

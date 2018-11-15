@@ -2,6 +2,7 @@
 var orm = require("../config/orm.js");
 
 var burgers = {
+  // call select all in the ORM
   selectAll: function(cb) {
     orm.selectAll("burgers", function(res) {
       cb(res);
